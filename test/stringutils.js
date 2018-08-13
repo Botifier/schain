@@ -14,4 +14,11 @@ contract('StringUtils', function (accounts) {
 
     // console.log(Strings);
   })
+  it("should return index at string properly", async function(){
+    let Strings = await StringUtilsChild.deployed();
+    let s = "abcd";
+    let c = "c";
+    let result = await Strings._indexOf.call(s, c);
+    assert(result == 2, "should have returned 2") ;
+  })
 })
